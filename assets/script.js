@@ -6,8 +6,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Cursor personalizado
 const cursor = document.querySelector('.cursor');
 if (cursor && matchMedia('(hover: hover)').matches) {
+  let cursorFrame;
   window.addEventListener('mousemove', e => {
-    cursor.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+    cancelAnimationFrame(cursorFrame);
+    cursorFrame = requestAnimationFrame(() => {
+      cursor.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+    });
   });
   document.querySelectorAll('a, button, .piece, .card').forEach(el => {
     el.addEventListener('mouseenter', () => {
@@ -120,7 +124,7 @@ window.addEventListener('scroll', () => {
   });
 
   // Cierra si se rota a landscape o se pasa a desktop
-  const mq = matchMedia('(min-width: 768px)');
+  const mq = matchMedia('(min-width: 901px)');
   mq.addEventListener('change', (e) => {
     if (e.matches) closeMenu();
   });

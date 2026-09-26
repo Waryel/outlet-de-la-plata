@@ -91,8 +91,64 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 }
 .nav__links { display: flex; gap: 2rem; }
 .nav__lang { display: flex; gap: .5rem; opacity: .7; }
+.nav__toggle { display: none; }
 @media (max-width: 900px) {
   .nav__links { display: none; }
+  .nav__toggle {
+    position: absolute;
+    right: var(--margin);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    z-index: 1001;
+  }
+  .nav__toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--platinum);
+    transition: transform .4s var(--ease), opacity .3s;
+  }
+  .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-mobile {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, .98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s var(--ease), visibility .4s;
+  }
+  .nav-mobile.is-open { opacity: 1; visibility: visible; }
+  .nav-mobile__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    text-align: center;
+    padding: 2rem;
+  }
+  .nav-mobile__inner a {
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 4vw, 1.8rem);
+    letter-spacing: .02em;
+  }
 }
 
 /* HERO */
@@ -122,6 +178,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
 
 .hero__content { position: relative; z-index: 1; max-width: 780px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 .hero__eyebrow {
   font-size: .72rem;
   letter-spacing: .4em;
@@ -829,74 +886,6 @@ body {
   }
 
   /* Botón hamburguesa */
-  .nav__toggle {
-    position: absolute;
-    right: var(--margin);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 0;
-    z-index: 1001;
-  }
-  .nav__toggle span {
-    display: block;
-    width: 22px;
-    height: 1px;
-    background: var(--platinum);
-    transition: transform .4s var(--ease), opacity .3s;
-  }
-  .nav__toggle[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-  .nav__toggle[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-  }
-  .nav__toggle[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-
-  /* Menú overlay móvil */
-  .nav-mobile {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 10, 10, .98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .4s var(--ease), visibility .4s;
-  }
-  .nav-mobile.is-open {
-    opacity: 1;
-    visibility: visible;
-  }
-  .nav-mobile__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-    text-align: center;
-    padding: 2rem;
-  }
-  .nav-mobile__inner a {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    letter-spacing: .02em;
-    color: var(--platinum);
-    justify-content: center;
-  }
   .nav-mobile__lang {
     margin-top: 2rem;
     font-size: .75rem;
@@ -914,12 +903,12 @@ body {
     /* Fallback para iOS Safari */
     min-height: 100vh;
     min-height: 100svh; /* small viewport height — barra URL visible */
-    padding: 0 var(--margin) 16vh;
+    padding: 0 var(--margin) max(5rem, 12vh);
     align-items: flex-end;
   }
   .hero__title {
-    font-size: clamp(2.8rem, 16vw, 5rem);
-    line-height: 1;
+    font-size: clamp(2.35rem, 11vw, 4.25rem);
+    line-height: .98;
   }
   .hero__sub {
     font-size: .95rem;
@@ -932,6 +921,7 @@ body {
     margin-bottom: 1.5rem;
   }
   .hero__scroll { bottom: 1.8rem; }
+  .hero__actions { gap: .75rem; }
 
   /* Canvas 3D: se oculta en móvil para rendimiento */
   .hero__canvas {
@@ -1117,11 +1107,11 @@ body {
    MÓVIL PEQUEÑO — hasta 479px (iPhone SE, mini)
    ============================================================ */
 @media (max-width: 479px) {
-  h1 { font-size: clamp(2.4rem, 18vw, 4rem); }
+  h1 { font-size: clamp(2.2rem, 12vw, 3.4rem); }
   h2 { font-size: 1.6rem; }
 
-  .hero { padding-bottom: 20vh; }
-  .hero__title { font-size: clamp(2.4rem, 18vw, 4rem); }
+  .hero { padding-bottom: max(4.5rem, 10vh); }
+  .hero__title { font-size: clamp(2.2rem, 12vw, 3.4rem); }
   .hero__sub { font-size: .88rem; }
 
   .btn {
@@ -1129,6 +1119,7 @@ body {
     font-size: .72rem;
     letter-spacing: .25em;
   }
+  .hero__actions { flex-direction: column; align-items: flex-start; }
 
   .nav__brand {
     font-size: .72rem;

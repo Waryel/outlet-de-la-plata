@@ -56,6 +56,7 @@ function canRender3D() {
   if (!gl) return false;
   if (navigator.connection?.saveData === true) return false;
   if (navigator.connection?.effectiveType?.includes('2g')) return false;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
 
   const isTouch = matchMedia('(hover: none) and (pointer: coarse)').matches;
   const isSmall = window.innerWidth < 768;
@@ -88,7 +89,7 @@ function initHero(canvas) {
     alpha: true,
     powerPreference: 'high-performance',
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -148,7 +149,6 @@ function initHero(canvas) {
       ring.traverse((child) => {
         if (child.isMesh) {
           child.material = silverMat;
-          child.frustumCulled = false;
         }
       });
 

@@ -6,9 +6,16 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const canvas = document.getElementById('parallax-canvas');
-if (!canvas) throw new Error('parallax-canvas no encontrado');
+if (canvas) {
 
 const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouchDevice = matchMedia('(hover: none) and (pointer: coarse)').matches;
+const isLowData = navigator.connection?.saveData === true || navigator.connection?.effectiveType?.includes('2g');
+
+if (prefersReducedMotion || isTouchDevice || isLowData) {
+  canvas.classList.add('no-webgl');
+  document.documentElement.classList.add('no-3d');
+} else {
 
 const renderer = new THREE.WebGLRenderer({
   canvas,
@@ -114,3 +121,5 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
   });
 }, { passive: true });
+}
+}
