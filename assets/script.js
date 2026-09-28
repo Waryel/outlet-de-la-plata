@@ -25,18 +25,43 @@ if (cursor && matchMedia('(hover: hover)').matches) {
   });
 }
 
-// Reveal on scroll
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('is-visible');
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.15 });
+// Reveal on scroll: GSAP for smooth timing, IntersectionObserver as fallback.
+const revealTargets = document.querySelectorAll(
+  '.card, .piece, .atelier__text, .press blockquote, .faq details, .contact__info, .contact__form'
+);
 
-document.querySelectorAll('.manifesto__text, .card, .piece, .atelier__text, .press blockquote, .faq details, .contact__info, .contact__form')
-  .forEach(el => { el.classList.add('reveal'); io.observe(el); });
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  revealTargets.forEach((element, index) => {
+    gsap.fromTo(element,
+      { autoAlpha: 0, y: 40 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1,
+        delay: (index % 4) * 0.06,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity,visibility',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 86%',
+          once: true,
+        },
+      }
+    );
+  });
+} else {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealTargets.forEach(el => { el.classList.add('reveal'); io.observe(el); });
+}
 
 // Filtros de catálogo
 document.querySelectorAll('.filter').forEach(btn => {
@@ -153,11 +178,15 @@ window.addEventListener('scroll', () => {
    ============================================================ */
 
 if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', () => {
+  const updateViewportHeight = () => {
     document.documentElement.style.setProperty(
       '--vh',
       `${window.visualViewport.height * 0.01}px`
     );
+  };
+  updateViewportHeight();
+  window.visualViewport.addEventListener('resize', () => {
+    updateViewportHeight();
   });
 }
 

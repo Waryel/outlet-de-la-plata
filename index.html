@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0A'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='40'%3E%F0%9F%92%8E%3C/text%3E%3C/svg%3E" type="image/svg+xml">
 
 <title>Joyería artesanal y platería en Málaga | OUTLET DE LA PLATA</title>
 <meta name="description" content="Joyería artesanal y platería en Málaga. Descubre anillos, medallas, cadenas, colgantes y piezas de plata 925 en OUTLET DE LA PLATA, C. San Juan 22.">
@@ -32,7 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Inter:wght@300;400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 
 <!--
@@ -226,9 +227,7 @@
   <nav class="nav__links" aria-label="Navegación principal">
     <a href="/anillos-de-plata/">Anillos</a>
     <a href="/medallas-de-plata/">Medallas</a>
-    <a href="/cadenas-de-plata/">Cadenas</a>
     <a href="/colgantes-de-plata/">Colgantes</a>
-    <a href="/joyas-artesanales/">Artesanales</a>
     <a href="/plateria-malaga/">Málaga</a>
     <a href="#faq">FAQ</a>
     <a href="#contacto">Contacto</a>
@@ -253,10 +252,8 @@
   <nav class="nav-mobile__inner" aria-label="Navegación móvil">
     <a href="/anillos-de-plata/">Anillos de plata</a>
     <a href="/medallas-de-plata/">Medallas de plata</a>
-    <a href="/cadenas-de-plata/">Cadenas de plata</a>
     <a href="/colgantes-de-plata/">Colgantes de plata</a>
     <a href="/pulseras-de-plata/">Pulseras de plata</a>
-    <a href="/joyas-artesanales/">Joyas artesanales</a>
     <a href="/joyas-religiosas/">Joyas religiosas</a>
     <a href="/plateria-malaga/">Platería en Málaga</a>
     <a href="#faq">Preguntas frecuentes</a>
@@ -283,7 +280,7 @@
 
   <div class="hero__content">
     <p class="hero__eyebrow">Málaga · Centro Histórico · Plata 925</p>
-    <h1 class="hero__title">JOYERÍA<br>ARTESANAL<br>EN MÁLAGA</h1>
+    <h1 class="hero__title">JOYERÍA DE <span class="hero__title-accent">PLATA</span><br>EN MÁLAGA</h1>
     <p class="hero__sub">
       Piezas de plata 925 y joyería original.<br>
       Anillos, medallas, cadenas y colgantes.
@@ -299,39 +296,34 @@
   </div>
 </section>
 
-<section class="manifesto" id="manifiesto">
-  <div class="manifesto__grid">
-    <p class="kicker">01 — Manifiesto</p>
-    <div class="manifesto__text">
-      <h2>Plata Original hecha para permanecer.</h2>
-      <p>
-        OUTLET DE LA PLATA es una joyería y platería artesanal situada
-        en el centro histórico de Málaga. La propuesta combina diseño, plata y
-        trabajo artesanal en piezas pensadas para uso cotidiano, regalo y colección.
-      </p>
-      <p>
-        Descubre <a href="/anillos-de-plata/">anillos de plata</a>,
-        <a href="/medallas-de-plata/">medallas</a>,
-        <a href="/cadenas-de-plata/">cadenas</a>,
-        <a href="/colgantes-de-plata/">colgantes</a> y otras
-        <a href="/joyas-artesanales/">joyas artesanales</a>.
-      </p>
-      <p class="manifesto__meta">
-        C. San Juan 22 · Distrito Centro · Málaga ·
-        <a href="tel:+34611041585">611 04 15 85</a>
-      </p>
-    </div>
+<section class="trust-strip" aria-labelledby="trust-title">
+  <div class="trust-strip__intro">
+    <p class="kicker">La diferencia está en los detalles</p>
+    <h2 id="trust-title">Una pieza para llevar. Una experiencia para recordar.</h2>
   </div>
-</section>
-
-<section class="chain" aria-hidden="true">
-  <canvas id="parallax-canvas" class="chain__canvas"></canvas>
-  <p class="chain__caption">Plata 925 · Joyería artesanal · Málaga</p>
+  <div class="trust-strip__items">
+    <article class="trust-item">
+      <span class="trust-item__number">01</span>
+      <h3>Plata 925 seleccionada</h3>
+      <p>Piezas originales con acabados cuidados para acompañarte durante mucho tiempo.</p>
+    </article>
+    <article class="trust-item">
+      <span class="trust-item__number">02</span>
+      <h3>El regalo que sí permanece</h3>
+      <p>Te ayudamos a elegir anillos, medallas y colgantes según la ocasión y la persona.</p>
+    </article>
+    <article class="trust-item">
+      <span class="trust-item__number">03</span>
+      <h3>Ventaja en tienda física</h3>
+      <p>Disfruta de un descuento exclusivo al comprar en nuestra tienda de C. San Juan 22, Málaga.</p>
+      <a class="trust-item__link" href="#contacto">Ver ubicación <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
 </section>
 
 <section class="collections" id="colecciones">
   <header class="section-head">
-    <p class="kicker">02 — Colecciones</p>
+    <p class="kicker">01 — Colecciones</p>
     <h2>Encuentra tu pieza.</h2>
   </header>
 
@@ -339,7 +331,7 @@
     <article class="card card--tall">
       <a href="/medallas-de-plata/" class="card__link" aria-label="Ver medallas de plata">
         <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1400&q=80"
+          <img src="images/photo-1599643477877-530eb83abc8e2.png"
                alt="Medallas de plata artesanales en Málaga"
                loading="lazy" decoding="async" width="1400" height="1750">
         </div>
@@ -353,13 +345,13 @@
     <article class="card">
       <a href="/anillos-de-plata/" class="card__link" aria-label="Ver anillos de plata">
         <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1400&q=80"
+          <img src="images/photo-1611591437281-460bfbe1220a.png"
                alt="Anillos de plata artesanales en Málaga"
                loading="lazy" decoding="async" width="1400" height="1867">
         </div>
         <div class="card__overlay">
           <h3>Anillos de plata</h3>
-          <p>Diseños de plata para mujer, hombre y piezas unicas.</p>
+          <p>Diseños de plata para hombre y piezas unicas.</p>
         </div>
       </a>
     </article>
@@ -367,12 +359,12 @@
     <article class="card card--short">
       <a href="/cadenas-de-plata/" class="card__link" aria-label="Ver cadenas de plata">
         <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=80"
+          <img src="images/photo-1535632066927-ab7c9ab60908.png"
                alt="Cadenas de plata disponibles en Málaga"
                loading="lazy" decoding="async" width="1400" height="1867">
         </div>
         <div class="card__overlay">
-          <h3>Cadenas de plata</h3>
+          <h3>Pedientes de plata</h3>
           <p>Modelos y longitudes para combinar con tus colgantes.</p>
         </div>
       </a>
@@ -381,12 +373,12 @@
     <article class="card">
       <a href="/colgantes-de-plata/" class="card__link" aria-label="Ver colgantes de plata">
         <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80"
+          <img src="images/photo-1611652022419-a9419f74343d.png"
                alt="Colgantes de plata artesanales en Málaga"
                loading="lazy" decoding="async" width="1400" height="1867">
         </div>
         <div class="card__overlay">
-          <h3>Colgantes de plata</h3>
+          <h3>Juego de plata con Turquesas</h3>
           <p>Piezas artesanales y diseños para regalar.</p>
         </div>
       </a>
@@ -396,7 +388,7 @@
 
 <section class="pieces" id="piezas">
   <header class="section-head">
-    <p class="kicker">03 — Catálogo</p>
+    <p class="kicker">02 — Catálogo</p>
     <h2>Piezas destacadas</h2>
     <p>
       Consulta cada producto en su propia ficha para conocer materiales,
@@ -416,7 +408,7 @@
     <article class="piece" data-collection="obsidiana">
       <a href="/productos/collar-obsidiana-i/" class="piece__link">
         <div class="piece__media">
-          <img src="/images/piezas/collar-obsidiana-i-1.jpg"
+          <img src="/images/piezas/collar-negro.png"
                alt="Collar Obsidiana I de plata 925"
                loading="lazy" decoding="async" width="1200" height="1600">
           <span class="badge">Edición limitada</span>
@@ -424,7 +416,7 @@
         <div class="piece__info">
           <h3>Collar Obsidiana I</h3>
           <p class="piece__meta">Plata 925 oxidada</p>
-          <p class="piece__price">890 €</p>
+          <p class="piece__price">160 €</p>
         </div>
       </a>
     </article>
@@ -432,7 +424,7 @@
     <article class="piece" data-collection="larios">
       <a href="/productos/anillo-larios-ii/" class="piece__link">
         <div class="piece__media">
-          <img src="/images/piezas/anillo-larios-ii-1.jpg"
+          <img src="/images/piezas/anillo4.png"
                alt="Anillo Larios II de plata 925"
                loading="lazy" decoding="async" width="1200" height="1600">
           <span class="badge">Edición limitada</span>
@@ -440,7 +432,7 @@
         <div class="piece__info">
           <h3>Anillo Larios II</h3>
           <p class="piece__meta">Plata mate</p>
-          <p class="piece__price">420 €</p>
+          <p class="piece__price">60 €</p>
         </div>
       </a>
     </article>
@@ -448,7 +440,7 @@
     <article class="piece" data-collection="soho">
       <a href="/productos/pendientes-soho-iii/" class="piece__link">
         <div class="piece__media">
-          <img src="/images/piezas/pendientes-soho-iii-1.jpg"
+          <img src="/images/piezas/pendiente4.png"
                alt="Pendientes Soho III de plata 925"
                loading="lazy" decoding="async" width="1200" height="1600">
           <span class="badge">Edición limitada</span>
@@ -456,7 +448,7 @@
         <div class="piece__info">
           <h3>Pendientes Soho III</h3>
           <p class="piece__meta">Plata pulida</p>
-          <p class="piece__price">560 €</p>
+          <p class="piece__price">45 €</p>
         </div>
       </a>
     </article>
@@ -464,7 +456,7 @@
     <article class="piece" data-collection="obsidiana">
       <a href="/productos/brazalete-obsidiana-iv/" class="piece__link">
         <div class="piece__media">
-          <img src="/images/piezas/brazalete-obsidiana-iv-1.jpg"
+          <img src="/images/piezas/pulsera1.png"
                alt="Brazalete Obsidiana IV de plata 925"
                loading="lazy" decoding="async" width="1200" height="1600">
           <span class="badge">Pieza única</span>
@@ -472,7 +464,7 @@
         <div class="piece__info">
           <h3>Brazalete Obsidiana IV</h3>
           <p class="piece__meta">Plata 925 forjada</p>
-          <p class="piece__price">1.240 €</p>
+          <p class="piece__price">110 €</p>
         </div>
       </a>
     </article>
@@ -483,12 +475,12 @@
 <section class="atelier" id="atelier">
   <div class="atelier__grid">
     <div class="atelier__media">
-      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=85"
+      <img src="images/outlet-de-la-plata-malaga.png?auto=format&fit=crop&w=1600&q=85"
            alt="Atelier de OUTLET DE LA PLATA en el centro de Málaga"
            loading="lazy" decoding="async" width="1600" height="1067">
     </div>
     <div class="atelier__text">
-      <p class="kicker">04 — Atelier</p>
+      <p class="kicker">03 — Atelier</p>
       <h2>Platería artesanal en el centro de Málaga.</h2>
       <p>
         El atelier es parte esencial de la identidad de la marca. Aquí se diseña,
@@ -507,25 +499,58 @@
 
 <section class="press" id="resenas">
   <header class="section-head">
-    <p class="kicker">05 — Opiniones</p>
-    <h2>La experiencia de nuestros clientes.</h2>
+    <p class="kicker">04 — Opiniones</p>
+    <h2>La confianza también se lleva puesta.</h2>
     <p class="press__intro">
-      Si se muestran valoraciones en la web, deben proceder de una fuente real,
-      mantenerse actualizadas y presentarse de forma transparente.
+      5,0 sobre 5 en Google. Estas son algunas experiencias compartidas por
+      clientes que visitaron OUTLET DE LA PLATA en el centro de Málaga.
     </p>
   </header>
+
+  <div class="reviews__summary" aria-label="Valoración de Google">
+    <strong>5,0</strong>
+    <span class="reviews__stars" aria-label="5 estrellas de 5">★★★★★</span>
+    <span>511 reseñas en Google</span>
+  </div>
+
+  <div class="press__grid reviews__grid">
+    <blockquote>
+      <p>“¡Gran variedad! Conseguí un buen descuento en un colgante. El dependiente fue muy amable. Lo recomiendo.”</p>
+      <cite>Rivianca · hace 4 meses <span>Google · traducción del original</span></cite>
+    </blockquote>
+    <blockquote>
+      <p>“Antonio fue muy amable. Compramos joyas preciosas: anillos, pendientes y mucho más. Una experiencia fantástica.”</p>
+      <cite>Nectaria Costescu · hace 3 semanas <span>Google · traducción del original</span></cite>
+    </blockquote>
+    <blockquote>
+      <p>“La mejor joyería de plata del centro de Málaga. Gran calidad, buenos precios y un trato increíblemente cercano.”</p>
+      <cite>Victor Luque · hace 5 meses <span>Google · traducción del original</span></cite>
+    </blockquote>
+    <blockquote>
+      <p>“Qué persona tan amable y atenta. Una tienda estupenda y única.”</p>
+      <cite>Axel Palomares · hace 2 meses <span>Google · traducción del original</span></cite>
+    </blockquote>
+    <blockquote>
+      <p>“Nos dejó probarlo todo y nos ayudó muchísimo. Un 10 sobre 10; volveremos sin duda.”</p>
+      <cite>Fruzsina Kupihar · hace 4 meses <span>Google · traducción del original</span></cite>
+    </blockquote>
+    <blockquote>
+      <p>“Una joyería estupenda. El propietario es muy amable y da muy buenos consejos.”</p>
+      <cite>Mari Luque · hace 1 año <span>Google · traducción del original</span></cite>
+    </blockquote>
+  </div>
 
   <div class="press__cta">
     <a href="https://www.google.com/maps/place/Outlet+de+la+Plata/@36.7200878,-4.4234812,17z"
        target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
-      Ver reseñas en Google
+      Leer todas las reseñas en Google <span aria-hidden="true">↗</span>
     </a>
   </div>
 </section>
 
 <section class="faq" id="faq">
   <header class="section-head">
-    <p class="kicker">06 — Preguntas frecuentes</p>
+    <p class="kicker">05 — Preguntas frecuentes</p>
     <h2>Preguntas frecuentes sobre joyería y plata.</h2>
   </header>
 
@@ -590,7 +615,7 @@
 <section class="contact" id="contacto">
   <div class="contact__grid">
     <div class="contact__info">
-      <p class="kicker">07 — Contacto</p>
+      <p class="kicker">06 — Contacto</p>
       <h2>Visítanos en el centro de Málaga.</h2>
 
       <address>
@@ -706,9 +731,7 @@
     <nav aria-label="Categorías">
       <a href="/anillos-de-plata/">Anillos de plata</a>
       <a href="/medallas-de-plata/">Medallas de plata</a>
-      <a href="/cadenas-de-plata/">Cadenas de plata</a>
       <a href="/colgantes-de-plata/">Colgantes de plata</a>
-      <a href="/joyas-artesanales/">Joyas artesanales</a>
       <a href="/plateria-malaga/">Platería en Málaga</a>
     </nav>
 
@@ -737,6 +760,8 @@
   </p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script type="module" src="/assets/three-hero.js"></script>
 <script type="module" src="/assets/three-parallax.js"></script>
 <script src="/assets/script.js" defer></script>
