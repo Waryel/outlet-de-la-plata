@@ -88,6 +88,7 @@ window.addEventListener('scroll', () => {
 (function initMobileMenu() {
   const toggle = document.querySelector('.nav__toggle');
   const menu = document.getElementById('nav-mobile');
+  const closeButton = menu?.querySelector('.nav-mobile__close');
   if (!toggle || !menu) return;
 
   function openMenu() {
@@ -95,6 +96,7 @@ window.addEventListener('scroll', () => {
     toggle.setAttribute('aria-label', 'Cerrar menú');
     menu.setAttribute('aria-hidden', 'false');
     menu.classList.add('is-open');
+    menu.classList.remove('is-leaving');
     document.body.classList.add('menu-open');
   }
 
@@ -103,17 +105,32 @@ window.addEventListener('scroll', () => {
     toggle.setAttribute('aria-label', 'Abrir menú');
     menu.setAttribute('aria-hidden', 'true');
     menu.classList.remove('is-open');
+    menu.classList.remove('is-leaving');
     document.body.classList.remove('menu-open');
   }
+
+  closeButton?.addEventListener('click', closeMenu);
 
   toggle.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
     isOpen ? closeMenu() : openMenu();
   });
 
-  // Cierra al pulsar cualquier enlace del menú
+  // Destaca la opción elegida y cierra con una transición antes de navegar.
   menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      menu.querySelectorAll('a').forEach(item => item.classList.remove('is-selected'));
+      link.classList.add('is-selected');
+      menu.classList.add('is-leaving');
+      window.setTimeout(() => {
+        window.location.href = link.href;
+      }, 340);
+    });
+  });
+
+  menu.addEventListener('click', event => {
+    if (event.target === menu) closeMenu();
   });
 
   // Cierra con Escape
@@ -144,17 +161,3 @@ if (window.visualViewport) {
   });
 }
 
-/* ============================================================
-   Detección táctil: elimina el canvas 3D si el dispositivo es móvil
-   para ahorrar batería y memoria (además del CSS)
-   ============================================================ */
-
-(function maybeDisable3DOnMobile() {
-  const isTouch = matchMedia('(hover: none) and (pointer: coarse)').matches;
-  const isSmall = window.innerWidth < 768;
-  if (isTouch && isSmall) {
-    document.querySelectorAll('.hero__canvas, .chain__canvas')
-      .forEach(c => c.classList.add('no-webgl'));
-    document.documentElement.classList.add('no-3d');
-  }
-})();

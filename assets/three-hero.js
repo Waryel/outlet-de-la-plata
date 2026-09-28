@@ -58,10 +58,6 @@ function canRender3D() {
   if (navigator.connection?.effectiveType?.includes('2g')) return false;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
 
-  const isTouch = matchMedia('(hover: none) and (pointer: coarse)').matches;
-  const isSmall = window.innerWidth < 768;
-  if (isTouch && isSmall) return false;
-
   return true;
 }
 
@@ -89,7 +85,8 @@ function initHero(canvas) {
     alpha: true,
     powerPreference: 'high-performance',
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  const isTouch = matchMedia('(hover: none) and (pointer: coarse)').matches;
+  renderer.setPixelRatio(isTouch ? 1 : Math.min(window.devicePixelRatio, 1.5));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -156,7 +153,7 @@ function initHero(canvas) {
       const center = box.getCenter(new THREE.Vector3());
       ring.position.sub(center);
 
-      ring.scale.setScalar(CONFIG.modelScale);
+      ring.scale.setScalar(isTouch ? 1.25 : CONFIG.modelScale);
       ring.rotation.x = CONFIG.modelRotationX;
       ring.rotation.y = CONFIG.modelRotationY;
       ring.rotation.z = CONFIG.modelRotationZ;
