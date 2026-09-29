@@ -222,19 +222,27 @@
 <div class="cursor" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
-  <a href="/" class="nav__brand" aria-label="OUTLET DE LA PLATA - Inicio">OUTLET DE LA PLATA</a>
+  <a href="#hero" class="nav__brand" aria-label="OUTLET DE LA PLATA - Inicio">OUTLET DE LA PLATA</a>
 
   <nav class="nav__links" aria-label="Navegación principal">
-    <a href="/anillos-de-plata/">Anillos</a>
-    <a href="/medallas-de-plata/">Medallas</a>
-    <a href="/colgantes-de-plata/">Colgantes</a>
-    <a href="/plateria-malaga/">Málaga</a>
+    <a href="#coleccion-anillos">Anillos</a>
+    <a href="#coleccion-pendientes">Pendientes</a>
+    <a href="#coleccion-colgantes">Colgantes</a>
+    <details class="nav__more">
+      <summary>Más</summary>
+      <div class="nav__more-menu">
+        <a href="#piezas">Pulsera de plata</a>
+        <a href="#piezas">Conjunto de plata</a>
+        <a href="#piezas">Piezas exclusivas</a>
+      </div>
+    </details>
+    <a href="#contacto">Málaga</a>
     <a href="#faq">FAQ</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <div class="nav__lang">
-    <a href="/" aria-current="page">ES</a>
+    <a href="#hero" aria-current="page">ES</a>
   </div>
 
   <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
@@ -250,12 +258,19 @@
     </button>
   </div>
   <nav class="nav-mobile__inner" aria-label="Navegación móvil">
-    <a href="/anillos-de-plata/">Anillos de plata</a>
-    <a href="/medallas-de-plata/">Medallas de plata</a>
-    <a href="/colgantes-de-plata/">Colgantes de plata</a>
-    <a href="/pulseras-de-plata/">Pulseras de plata</a>
-    <a href="/joyas-religiosas/">Joyas religiosas</a>
-    <a href="/plateria-malaga/">Platería en Málaga</a>
+    <a href="#coleccion-anillos">Anillos de plata</a>
+    <a href="#coleccion-pendientes">Pendientes de plata</a>
+    <a href="#coleccion-colgantes">Colgantes de plata</a>
+    <details class="nav-mobile__more">
+      <summary>Más</summary>
+      <div>
+        <a href="#piezas">Pulsera de plata</a>
+        <a href="#piezas">Conjunto de plata</a>
+        <a href="#piezas">Piezas exclusivas</a>
+      </div>
+    </details>
+    <a href="#piezas">Joyas religiosas</a>
+    <a href="#contacto">Platería en Málaga</a>
     <a href="#faq">Preguntas frecuentes</a>
     <a href="#contacto">Contacto</a>
   </nav>
@@ -286,8 +301,8 @@
       Anillos, medallas, cadenas y colgantes.
     </p>
     <div class="hero__actions">
-      <a href="/joyas-artesanales/" class="btn">Explorar colección</a>
-      <a href="/plateria-malaga/" class="btn btn--ghost">Visítanos en Málaga</a>
+      <a href="#colecciones" class="btn">Explorar colección</a>
+      <a href="#contacto" class="btn btn--ghost">Visítanos en Málaga</a>
     </div>
   </div>
 
@@ -328,24 +343,24 @@
   </header>
 
   <div class="collections__grid">
-    <article class="card card--tall">
-      <a href="/medallas-de-plata/" class="card__link" aria-label="Ver medallas de plata">
+    <article class="card card--tall" id="coleccion-pendientes">
+      <a href="#coleccion-pendientes" class="card__link" aria-label="Ver pendientes de plata">
         <div class="card__media">
-          <img src="images/photo-1599643477877-530eb83abc8e2.png"
-               alt="Medallas de plata artesanales en Málaga"
+          <img src="images/pendiente-de-plata/coleccion-pendientes-plata-navajo-malaga.jpg"
+               alt="Pendientes de plata artesanales en Málaga"
                loading="lazy" decoding="async" width="1400" height="1750">
         </div>
         <div class="card__overlay">
-          <h3>Medallas de plata</h3>
-          <p>Medallas, símbolos y piezas para regalar o conservar.</p>
+          <h3>Pendientes de plata</h3>
+          <p>Diseños de plata para regalar, combinar y llevar cada día.</p>
         </div>
       </a>
     </article>
 
-    <article class="card">
-      <a href="/anillos-de-plata/" class="card__link" aria-label="Ver anillos de plata">
+    <article class="card" id="coleccion-anillos">
+      <a href="#piezas" class="card__link" aria-label="Ver anillos de plata">
         <div class="card__media">
-          <img src="images/photo-1611591437281-460bfbe1220a.png"
+          <img src="images/anillos-de-plata/hombre/anillo-sello-nautico-ancla-plata-hombre-malaga.jpg"
                alt="Anillos de plata artesanales en Málaga"
                loading="lazy" decoding="async" width="1400" height="1867">
         </div>
@@ -357,28 +372,28 @@
     </article>
 
     <article class="card card--short">
-      <a href="/cadenas-de-plata/" class="card__link" aria-label="Ver cadenas de plata">
+      <a href="#piezas" class="card__link" aria-label="Ver pulseras de plata">
         <div class="card__media">
-          <img src="images/photo-1535632066927-ab7c9ab60908.png"
-               alt="Cadenas de plata disponibles en Málaga"
+          <img src="images/pulseras-de-plata/pulsera-de-plata.png"
+               alt="Pulseras de plata disponibles en Málaga"
                loading="lazy" decoding="async" width="1400" height="1867">
         </div>
         <div class="card__overlay">
-          <h3>Pedientes de plata</h3>
-          <p>Modelos y longitudes para combinar con tus colgantes.</p>
+          <h3>Pulseras de plata</h3>
+          <p>Selección de diseños para combinar y regalar.</p>
         </div>
       </a>
     </article>
 
-    <article class="card">
-      <a href="/colgantes-de-plata/" class="card__link" aria-label="Ver colgantes de plata">
+    <article class="card" id="coleccion-colgantes">
+      <a href="#piezas" class="card__link" aria-label="Ver colgantes de plata">
         <div class="card__media">
-          <img src="images/photo-1611652022419-a9419f74343d.png"
-               alt="Colgantes de plata artesanales en Málaga"
+          <img src="images/conjunto-de-plata/conjunto-turquesa-plata-horizonte-mistico-malaga.jpg"
+               alt="Juego de plata artesanales en Málaga"
                loading="lazy" decoding="async" width="1400" height="1867">
         </div>
         <div class="card__overlay">
-          <h3>Juego de plata con Turquesas</h3>
+          <h3>Conjunto de plata con Turquesas</h3>
           <p>Piezas artesanales y diseños para regalar.</p>
         </div>
       </a>
@@ -406,23 +421,23 @@
   <div class="pieces__grid" id="piecesGrid">
 
     <article class="piece" data-collection="obsidiana">
-      <a href="/productos/collar-obsidiana-i/" class="piece__link">
+      <a href="#piezas" class="piece__link">
         <div class="piece__media">
-          <img src="/images/piezas/collar-negro.png"
-               alt="Collar Obsidiana I de plata 925"
+          <img src="/images/conjunto-de-plata/conjunto-onix-negro-plata-noche-mistica-malaga.jpg"
+               alt="Conjunto Onix-Negro Noche Mística de plata 925"
                loading="lazy" decoding="async" width="1200" height="1600">
           <span class="badge">Edición limitada</span>
         </div>
         <div class="piece__info">
-          <h3>Collar Obsidiana I</h3>
-          <p class="piece__meta">Plata 925 oxidada</p>
+          <h3>Conjunto Onix-Negro Noche Mística</h3>
+          <p class="piece__meta">Diseño artesanal</p>
           <p class="piece__price">160 €</p>
         </div>
       </a>
     </article>
 
     <article class="piece" data-collection="larios">
-      <a href="/productos/anillo-larios-ii/" class="piece__link">
+      <a href="#piezas" class="piece__link">
         <div class="piece__media">
           <img src="/images/piezas/anillo4.png"
                alt="Anillo Larios II de plata 925"
@@ -438,7 +453,7 @@
     </article>
 
     <article class="piece" data-collection="soho">
-      <a href="/productos/pendientes-soho-iii/" class="piece__link">
+      <a href="#piezas" class="piece__link">
         <div class="piece__media">
           <img src="/images/piezas/pendiente4.png"
                alt="Pendientes Soho III de plata 925"
@@ -454,7 +469,7 @@
     </article>
 
     <article class="piece" data-collection="obsidiana">
-      <a href="/productos/brazalete-obsidiana-iv/" class="piece__link">
+      <a href="#piezas" class="piece__link">
         <div class="piece__media">
           <img src="/images/piezas/pulsera1.png"
                alt="Brazalete Obsidiana IV de plata 925"
@@ -559,7 +574,7 @@
       <summary>¿Dónde comprar joyas de plata en Málaga?</summary>
       <p>
         OUTLET DE LA PLATA se encuentra en C. San Juan 22, Distrito Centro,
-        29005 Málaga. Consulta la <a href="/plateria-malaga/">página de platería en Málaga</a>
+        29005 Málaga. Consulta la <a href="#contacto">información de la tienda</a>
         para conocer ubicación, horario y servicios.
       </p>
     </details>
@@ -567,10 +582,9 @@
     <details>
       <summary>¿Qué tipo de joyas de plata puedo encontrar?</summary>
       <p>
-        La oferta puede incluir <a href="/anillos-de-plata/">anillos</a>,
-        <a href="/medallas-de-plata/">medallas</a>,
-        <a href="/cadenas-de-plata/">cadenas</a>,
-        <a href="/colgantes-de-plata/">colgantes</a>,
+        La oferta puede incluir <a href="#coleccion-anillos">anillos</a>,
+        <a href="#piezas">medallas</a>,
+        cadenas, <a href="#coleccion-colgantes">colgantes</a>,
         pulseras, pendientes y otras piezas artesanales, según disponibilidad.
       </p>
     </details>
@@ -729,10 +743,10 @@
     </div>
 
     <nav aria-label="Categorías">
-      <a href="/anillos-de-plata/">Anillos de plata</a>
-      <a href="/medallas-de-plata/">Medallas de plata</a>
-      <a href="/colgantes-de-plata/">Colgantes de plata</a>
-      <a href="/plateria-malaga/">Platería en Málaga</a>
+      <a href="#coleccion-anillos">Anillos de plata</a>
+      <a href="#coleccion-pendientes">Pendientes de plata</a>
+      <a href="#coleccion-colgantes">Colgantes de plata</a>
+      <a href="#contacto">Platería en Málaga</a>
     </nav>
 
     <nav aria-label="Información">
