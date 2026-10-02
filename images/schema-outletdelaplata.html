@@ -1,0 +1,357 @@
+<!--
+  DATOS ESTRUCTURADOS · OUTLET DE LA PLATA
+  Pega cada bloque dentro del <head> (o antes de </body>) de la página indicada.
+  Todos los datos salen de lo que ya aparece publicado en la web.
+  Pendiente de completar por ti (omitido a propósito para no inventar):
+    - "logo": URL de tu logotipo (añádelo al bloque JewelryStore)
+    - "priceRange": rango de precios si quieres (p. ej. "€€")
+-->
+
+
+<!-- ============================================================
+     1) HOME  ·  https://outletdelaplata.es/
+     JewelryStore + WebSite + FAQPage
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "JewelryStore",
+      "@id": "https://outletdelaplata.es/#tienda",
+      "name": "OUTLET DE LA PLATA",
+      "url": "https://outletdelaplata.es/",
+      "description": "Joyería artesanal y platería en el centro de Málaga: anillos, medallas, cadenas, colgantes y piezas de plata 925.",
+      "image": "https://outletdelaplata.es/images/outlet-de-la-plata-malaga.png",
+      "telephone": "+34611041585",
+      "email": "hola@outletdelaplata.es",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C. San Juan, 22",
+        "addressLocality": "Málaga",
+        "postalCode": "29005",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.7200878,
+        "longitude": -4.4234812
+      },
+      "hasMap": "https://www.google.com/maps/place/Outlet+de+la+Plata/@36.7200878,-4.4234812,17z",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:30",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "17:30",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "14:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/people/Outlet-de-la-Plata/100048492763612/",
+        "https://www.instagram.com/outletdelaplata",
+        "https://www.tiktok.com/@outletdelaplata",
+        "https://www.pinterest.es/outletdelaplata"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://outletdelaplata.es/#web",
+      "url": "https://outletdelaplata.es/",
+      "name": "OUTLET DE LA PLATA",
+      "inLanguage": "es-ES",
+      "publisher": { "@id": "https://outletdelaplata.es/#tienda" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Dónde comprar joyas de plata en Málaga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OUTLET DE LA PLATA está en C. San Juan, 22, Distrito Centro, 29005 Málaga. Abre de lunes a viernes de 10:30 a 14:00 y de 17:30 a 21:00, y los sábados de 10:00 a 14:00. Los domingos está cerrado. Teléfono: 611 04 15 85."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de joyas de plata puedo encontrar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En OUTLET DE LA PLATA puedes encontrar anillos, medallas, cadenas, colgantes, pulseras, pendientes y otras piezas artesanales, según disponibilidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es la plata 925?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La plata 925 contiene un 92,5 % de plata. Es una composición habitual en joyería y platería. Consulta la ficha de cada producto para conocer el material utilizado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo puedo saber mi talla de anillo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mide el diámetro interior de un anillo que ya te quede bien y consulta la equivalencia de talla. Si tienes dudas, llama a OUTLET DE LA PLATA al 611 04 15 85."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se limpia la plata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El método de limpieza depende de la pieza y de sus piedras o acabados. Evita productos abrasivos o baños químicos si no sabes si son adecuados; consulta en tienda antes de limpiar una pieza delicada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hacen envíos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los destinos, costes y plazos pueden variar. Confirma las condiciones de envío antes de comprar llamando a OUTLET DE LA PLATA al 611 04 15 85."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+<!-- ============================================================
+     2) PÁGINA DE MÁLAGA  ·  https://outletdelaplata.es/malaga
+     (usa la misma URL que acabes dejando como canónica)
+     Referencia a la tienda por @id + BreadcrumbList + FAQPage
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://outletdelaplata.es/malaga#pagina",
+      "url": "https://outletdelaplata.es/malaga",
+      "name": "Joyería de plata en Málaga | OUTLET DE LA PLATA",
+      "inLanguage": "es-ES",
+      "isPartOf": { "@id": "https://outletdelaplata.es/#web" },
+      "about": { "@id": "https://outletdelaplata.es/#tienda" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://outletdelaplata.es/" },
+        { "@type": "ListItem", "position": 2, "name": "Joyería de plata en Málaga", "item": "https://outletdelaplata.es/malaga" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Dónde está OUTLET DE LA PLATA en Málaga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La tienda está en C. San Juan, 22, Distrito Centro, 29005 Málaga. Abre de lunes a viernes de 10:30 a 14:00 y de 17:30 a 21:00, y los sábados de 10:00 a 14:00. Los domingos está cerrada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de joyas puedo encontrar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La selección puede incluir anillos, medallas, cadenas, colgantes, pulseras, pendientes y otras piezas artesanales, según disponibilidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo puedo consultar la disponibilidad de una pieza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Llama a OUTLET DE LA PLATA al 611 04 15 85 o visita la tienda en C. San Juan, 22, Málaga."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Si en /malaga NO está ya el bloque JewelryStore completo del punto 1 en otra parte,
+     el @id de arriba apunta a la home, que es donde se define. Es lo correcto: una sola
+     definición de la entidad, referenciada desde el resto. -->
+
+
+<!-- ============================================================
+     3) ANILLOS  ·  https://outletdelaplata.es/anillos-de-plata/
+     CollectionPage + BreadcrumbList + FAQPage
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://outletdelaplata.es/anillos-de-plata/#pagina",
+      "url": "https://outletdelaplata.es/anillos-de-plata/",
+      "name": "Anillos de Plata 925 en Málaga | Artesanales y con Piedras Naturales",
+      "description": "Anillos de plata 925 artesanales en el centro de Málaga. Diseños con turquesa, ámbar, amatista, circonitas y filigrana.",
+      "inLanguage": "es-ES",
+      "image": "https://outletdelaplata.es/images/anillos-de-plata/coleccion-anillos-elegancia-mistica-plata.jpg",
+      "isPartOf": { "@id": "https://outletdelaplata.es/#web" },
+      "about": { "@id": "https://outletdelaplata.es/#tienda" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://outletdelaplata.es/" },
+        { "@type": "ListItem", "position": 2, "name": "Anillos de plata", "item": "https://outletdelaplata.es/anillos-de-plata/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Dónde comprar anillos de plata en Málaga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En OUTLET DE LA PLATA, C. San Juan 22, Distrito Centro, 29005 Málaga. Somos una tienda especializada en anillos de plata 925 artesanales con piedras naturales, filigrana y estilos étnicos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tipos de anillos de plata hay disponibles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anillos de plata 925 con turquesa, lapislázuli, malaquita, amatista, ámbar, ojo de tigre y circonitas. Estilos de sello, statement grandes, giratorios antiestrés, filigrana balinesa y diseños geométricos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo sé mi talla de anillo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mide el diámetro interior de un anillo que ya te quede bien, o la circunferencia del dedo con un hilo. En la tienda ajustamos tallas y asesoramos antes de la compra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se limpia un anillo de plata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con un paño de pulido suave o agua tibia con jabón neutro y un cepillo de dientes muy suave. Evita productos abrasivos."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Nota: he omitido a propósito la pregunta "¿Los anillos son artesanales o industrializados?"
+     hasta que confirmes que todo se forja realmente en vuestro atelier (ver auditoría). -->
+
+
+<!-- ============================================================
+     4) CONJUNTOS  ·  https://outletdelaplata.es/conjunto-de-plata/
+     CollectionPage + BreadcrumbList + FAQPage
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://outletdelaplata.es/conjunto-de-plata/#pagina",
+      "url": "https://outletdelaplata.es/conjunto-de-plata/",
+      "name": "Conjuntos de Plata 925 en Málaga | Joyas a Juego",
+      "description": "Conjuntos de plata 925 en Málaga con turquesa, ónix y circonitas de colores. Piezas a juego con colgante, anillo, pulsera y pendientes.",
+      "inLanguage": "es-ES",
+      "image": "https://outletdelaplata.es/images/conjunto-de-plata/conjunto-turquesa-plata-horizonte-mistico-malaga.jpg",
+      "isPartOf": { "@id": "https://outletdelaplata.es/#web" },
+      "about": { "@id": "https://outletdelaplata.es/#tienda" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://outletdelaplata.es/" },
+        { "@type": "ListItem", "position": 2, "name": "Conjuntos de plata", "item": "https://outletdelaplata.es/conjunto-de-plata/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Se venden las piezas del conjunto por separado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de cada set y de su disponibilidad. Consúltanos en tienda para saber si puedes adquirir el conjunto completo o combinar piezas individuales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué piedras tienen los conjuntos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hay propuestas con turquesa, ónix y circonitas de colores. La composición exacta, el tipo de piedra y las piezas incluidas se confirman para cada conjunto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde puedo ver los conjuntos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En OUTLET DE LA PLATA, C. San Juan 22, Distrito Centro, 29005 Málaga."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Nota: se omite "Abrimos de lunes a sábado desde las 10:30" de esta FAQ porque
+     contradice el horario real del sábado (10:00). Corrígelo también en el texto visible. -->
+
+
+<!-- ============================================================
+     5) PLANTILLA PARA LAS PÁGINAS RESTANTES (pendientes, colgantes, pulseras…)
+     Cambia solo nombre, URL y el segundo nivel del breadcrumb.
+     ============================================================ -->
+<!--
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "url": "https://outletdelaplata.es/pendientes-de-plata/",
+      "name": "[title de la página]",
+      "description": "[meta description de la página]",
+      "inLanguage": "es-ES",
+      "isPartOf": { "@id": "https://outletdelaplata.es/#web" },
+      "about": { "@id": "https://outletdelaplata.es/#tienda" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://outletdelaplata.es/" },
+        { "@type": "ListItem", "position": 2, "name": "Pendientes de plata", "item": "https://outletdelaplata.es/pendientes-de-plata/" }
+      ]
+    }
+  ]
+}
+</script>
+-->

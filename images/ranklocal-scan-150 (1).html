@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Informe GeoGrid — Outlet de la Plata</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:#f1f5f9;color:#1e293b;font-size:14px;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-radius:16px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.hdr-logo{max-height:40px;margin-bottom:8px;display:block}
+.hdr-agency{font-size:13px;font-weight:700;color:#4ade80;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.hdr-title{font-size:22px;font-weight:800;color:#fff;line-height:1.2}
+.hdr-date{font-size:12px;color:#64748b;margin-top:4px}
+.hdr-biz{text-align:right}
+.hdr-biz-name{font-size:15px;font-weight:700;color:#fff}
+.hdr-biz-cat{font-size:12px;color:#64748b;margin-top:2px}
+.hdr-biz-rating{display:flex;align-items:center;gap:5px;justify-content:flex-end;margin-top:6px}
+.stars{color:#fbbf24;font-size:14px}
+.rating-num{font-size:15px;font-weight:700;color:#fff}
+.reviews{font-size:12px;color:#94a3b8}
+.kw-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:12px;color:#e2e8f0;margin-top:8px}
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:600px){.metrics{grid-template-columns:repeat(3,1fr)}}
+.metric{background:#fff;border-radius:12px;padding:16px 12px;text-align:center;border:1px solid #e2e8f0}
+.metric-val{font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
+.metric-lbl{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.3px}
+.metric-bar{height:4px;border-radius:2px;background:#f1f5f9;margin-top:8px;overflow:hidden}
+.metric-bar-fill{height:100%;border-radius:2px;transition:width .6s}
+/* INTERPRETATION */
+.interp{border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:14px;border:1px solid}
+.interp-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.interp-title{font-size:14px;font-weight:700;margin-bottom:3px}
+.interp-text{font-size:13px;line-height:1.6}
+/* MAIN GRID */
+.main{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:640px){.main{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;overflow:hidden}
+.card-title{font-size:13px;font-weight:700;padding:12px 16px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:8px;color:#1e293b}
+.card-body{padding:16px}
+/* MAPA */
+#rl-share-map{width:100%;height:320px;background:#f1f5f9;border-radius:0}
+.map-fallback{width:100%;height:320px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#94a3b8}
+/* GRID CSS */
+.geogrid{display:grid;gap:4px;padding:12px;margin:0 auto;background:#1e293b;border-radius:10px;width:fit-content}
+.gg-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;cursor:default}
+.gg-c1{background:#22c55e}.gg-c4{background:#84cc16}.gg-c8{background:#f59e0b}.gg-c14{background:#ef4444}.gg-c20{background:#334155}
+.gg-center{outline:3px solid #1e40af;outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:10px 16px;border-top:1px solid #f1f5f9;font-size:11px}
+.li{display:flex;align-items:center;gap:5px}
+.ld{width:10px;height:10px;border-radius:50%}
+/* COMPETITORS */
+.comp-table{width:100%;border-collapse:collapse;font-size:12px}
+.comp-table th{background:#f8fafc;color:#64748b;padding:8px 12px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;border-bottom:1px solid #e2e8f0}
+.comp-table td{padding:10px 12px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+.comp-table tr:last-child td{border-bottom:none}
+/* FOOTER */
+.footer{background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:20px}
+.footer-brand{font-size:13px;font-weight:700;color:#1e293b}
+.footer-cta{background:#16a34a;color:#fff;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;display:inline-block}
+.footer-meta{font-size:11px;color:#94a3b8}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <img src="http://iagenciamadrid.com/" class="hdr-logo" alt="">    <div class="hdr-agency">IAGENCIA MADRID</div>
+    <div class="hdr-title">Informe GeoGrid</div>
+    <div class="hdr-date">02/10/2026 18:03</div>
+  </div>
+  <div class="hdr-biz">
+    <div class="hdr-biz-name">Outlet de la Plata</div>
+    <div class="hdr-biz-cat">establishment</div>    <div style="font-size:12px;color:#94a3b8;margin-top:3px">C. San Juan, 22, Distrito Centro, 29005 Málaga, España</div>        <div class="hdr-biz-rating">
+      <span class="stars">★</span>
+      <span class="rating-num">5.0</span>
+      <span class="reviews">(514 reseñas)</span>    </div>
+        <div class="kw-pill">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      anillo de plata, pendiente de plata, colgante de plata    </div>
+  </div>
+</div>
+
+<!-- MÉTRICAS -->
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-val" style="color:#dc2626">21</div>
+    <div class="metric-lbl">Posición media</div>
+    <div class="metric-bar"><div class="metric-bar-fill" style="width:-5%;background:#16a34a"></div></div>
+  </div>
+  <div class="metric">
+    <div class="metric-val" style="color:#dc2626">0%</div>
+    <div class="metric-lbl">Share of Voice</div>
+    <div class="metric-bar"><div class="metric-bar-fill" style="width:0%;background:#3b82f6"></div></div>
+  </div>
+  <div class="metric">
+    <div class="metric-val" style="color:#16a34a">0%</div>
+    <div class="metric-lbl">Top 3</div>
+    <div class="metric-bar"><div class="metric-bar-fill" style="width:0%;background:#15803d"></div></div>
+  </div>
+  <div class="metric">
+    <div class="metric-val" style="color:#3b82f6">0%</div>
+    <div class="metric-lbl">Top 10</div>
+    <div class="metric-bar"><div class="metric-bar-fill" style="width:0%;background:#3b82f6"></div></div>
+  </div>
+  <div class="metric">
+    <div class="metric-val">0<span style="font-size:14px;font-weight:400;color:#94a3b8">/49</span></div>
+    <div class="metric-lbl">Puntos visibles</div>
+    <div class="metric-bar"><div class="metric-bar-fill" style="width:0%;background:#8b5cf6"></div></div>
+  </div>
+</div>
+
+<!-- INTERPRETACIÓN -->
+<div class="interp" style="background:#dc262610;border-color:#dc262630">
+  <div class="interp-icon" style="background:#dc262620">
+    🔴  </div>
+  <div>
+    <div class="interp-title" style="color:#dc2626">Visibilidad Muy baja</div>
+    <div class="interp-text" style="color:#475569">El negocio tiene visibilidad casi nula en Google Maps para esta búsqueda. Se requiere optimización urgente del perfil local. El negocio aparece en <strong>0 de 49 puntos</strong> del área analizada (1.00 km de radio).</div>
+  </div>
+</div>
+
+<!-- MAPA + GRID -->
+<div class="main">
+  <!-- Mapa real -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Mapa — Grid 7×7 · 1.00 km
+    </div>
+        <div id="rl-share-map"></div>
+        <div class="legend">
+      <div class="li"><div class="ld" style="background:#15803d"></div>Top 3</div>
+      <div class="li"><div class="ld" style="background:#65a30d"></div>4–7</div>
+      <div class="li"><div class="ld" style="background:#d97706"></div>8–13</div>
+      <div class="li"><div class="ld" style="background:#dc2626"></div>14–20</div>
+      <div class="li"><div class="ld" style="background:#475569"></div>+20</div>
+    </div>
+  </div>
+
+  <!-- Grid CSS + stats -->
+  <div class="card">
+    <div class="card-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Heatmap de posiciones
+    </div>
+    <div class="card-body" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <div class="geogrid" style="grid-template-columns:repeat(7,30px)">
+        <div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20 gg-center' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div><div class='gg-dot c20' title='Pos. +20'>+20</div>      </div>
+      <div style="width:100%;background:#f8fafc;border-radius:10px;padding:12px 14px">
+        <div style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;margin-bottom:8px">Distribución de posiciones</div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+          <div style="width:36px;font-size:11px;color:#64748b;text-align:right">1-3</div>
+          <div style="flex:1;height:16px;background:#f1f5f9;border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:0%;background:#15803d;border-radius:4px;transition:width .6s"></div>
+          </div>
+          <div style="width:28px;font-size:11px;font-weight:600;color:#1e293b">0</div>
+        </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+          <div style="width:36px;font-size:11px;color:#64748b;text-align:right">4-7</div>
+          <div style="flex:1;height:16px;background:#f1f5f9;border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:0%;background:#65a30d;border-radius:4px;transition:width .6s"></div>
+          </div>
+          <div style="width:28px;font-size:11px;font-weight:600;color:#1e293b">0</div>
+        </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+          <div style="width:36px;font-size:11px;color:#64748b;text-align:right">8-13</div>
+          <div style="flex:1;height:16px;background:#f1f5f9;border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:0%;background:#d97706;border-radius:4px;transition:width .6s"></div>
+          </div>
+          <div style="width:28px;font-size:11px;font-weight:600;color:#1e293b">0</div>
+        </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+          <div style="width:36px;font-size:11px;color:#64748b;text-align:right">14-20</div>
+          <div style="flex:1;height:16px;background:#f1f5f9;border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:0%;background:#dc2626;border-radius:4px;transition:width .6s"></div>
+          </div>
+          <div style="width:28px;font-size:11px;font-weight:600;color:#1e293b">0</div>
+        </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+          <div style="width:36px;font-size:11px;color:#64748b;text-align:right">+20</div>
+          <div style="flex:1;height:16px;background:#f1f5f9;border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:100%;background:#475569;border-radius:4px;transition:width .6s"></div>
+          </div>
+          <div style="width:28px;font-size:11px;font-weight:600;color:#1e293b">49</div>
+        </div>
+              </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPETIDORES -->
+
+<div class="card" style="margin-bottom:20px">
+  <div class="card-title" style="background:#0f172a;color:#fff;border-radius:13px 13px 0 0;padding:14px 18px">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span style="color:#fff;font-weight:700">Plan de acción recomendado</span>
+  </div>
+  <div class="card-body" style="padding:20px">
+        <div style="margin-bottom:20px">
+      <div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px">Acciones prioritarias</div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;padding:12px 14px;background:#fef2f2;border-radius:10px;border-left:3px solid #dc2626">
+        <span style="font-size:18px;flex-shrink:0">🚨</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#dc2626;margin-bottom:2px">Visibilidad crítica — acción urgente</div>
+          <div style="font-size:12px;color:#475569;line-height:1.6">Tu negocio aparece en menos del 3% del área analizada. La causa más común es un perfil de Google Business incompleto o sin optimizar. Completa el 100% de los campos: descripción, horarios, categorías secundarias y fotos recientes.</div>
+        </div>
+      </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;padding:12px 14px;background:#eff6ff;border-radius:10px;border-left:3px solid #2563eb">
+        <span style="font-size:18px;flex-shrink:0">📝</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#2563eb;margin-bottom:2px">Optimiza la descripción del negocio</div>
+          <div style="font-size:12px;color:#475569;line-height:1.6">Añade una descripción de 200-750 caracteres que incluya la keyword principal, el nombre del barrio o ciudad y los servicios clave. Google la usa directamente para posicionar el perfil en búsquedas locales.</div>
+        </div>
+      </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;padding:12px 14px;background:#f5f3ff;border-radius:10px;border-left:3px solid #7c3aed">
+        <span style="font-size:18px;flex-shrink:0">⭐</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#7c3aed;margin-bottom:2px">Consigue reseñas mencionando la keyword</div>
+          <div style="font-size:12px;color:#475569;line-height:1.6">Pide a tus clientes que mencionen el servicio específico y el barrio en su reseña. Ejemplo: "La mejor anillo de plata, pendiente de plata, colgante de plata de [barrio]". Las reseñas con keywords locales aumentan el SOV hasta un 40%.</div>
+        </div>
+      </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;padding:12px 14px;background:#ecfeff;border-radius:10px;border-left:3px solid #0891b2">
+        <span style="font-size:18px;flex-shrink:0">📅</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#0891b2;margin-bottom:2px">Publica posts semanales en Google My Business</div>
+          <div style="font-size:12px;color:#475569;line-height:1.6">Los posts activos señalan a Google que el negocio está vivo. Publica una oferta, novedad o consejo cada semana usando la keyword + nombre del barrio. Negocios con posts frecuentes ganan entre 2-5 posiciones de media.</div>
+        </div>
+      </div>
+          </div>
+    
+        <div>
+      <div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px">
+        Keywords recomendadas — dónde usarlas
+      </div>
+      <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:#f8fafc">
+            <th style="padding:8px 12px;text-align:left;color:#64748b;font-weight:600;border-bottom:1px solid #e2e8f0">Keyword sugerida</th>
+            <th style="padding:8px 12px;text-align:left;color:#64748b;font-weight:600;border-bottom:1px solid #e2e8f0">Tipo</th>
+            <th style="padding:8px 12px;text-align:left;color:#64748b;font-weight:600;border-bottom:1px solid #e2e8f0">Dónde usarla</th>
+          </tr>
+        </thead>
+        <tbody>
+                    <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #f1f5f9;font-weight:600;color:#1e293b">anillo de plata, pendiente de plata, colgante de plata</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #f1f5f9">
+              <span style="background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600">🔍 General</span>
+            </td>
+            <td style="padding:9px 12px;border-bottom:1px solid #f1f5f9;color:#475569">Descripción GBP · Nombre del negocio · Servicios GBP</td>
+          </tr>
+                    <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #f1f5f9;font-weight:600;color:#1e293b">anillo de plata, pendiente de plata, colgante de plata cerca de mi</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #f1f5f9">
+              <span style="background:#fef9c3;color:#92400e;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600">📍 Local</span>
+            </td>
+            <td style="padding:9px 12px;border-bottom:1px solid #f1f5f9;color:#475569">Posts semanales GMB · Descripción GBP</td>
+          </tr>
+                  </tbody>
+      </table>
+      </div>
+    </div>
+      </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div class="footer-brand">IAGENCIA MADRID</div>
+    <div class="footer-meta">Informe generado el 02/10/2026 18:03</div>
+  </div>
+  <div style="font-size:12px;color:#64748b;text-align:center">
+    Informe GeoGrid · Visibilidad local en Google Maps
+  </div>
+  <div>
+    <a href="#" class="footer-cta" onclick="window.print();return false;">Imprimir / PDF</a>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+var RL_GRID_DATA  = [{"lat":36.74703714,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.74703714,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.74703714,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.74703714,"lng":-4.4234812,"pos":21,"center":0},{"lat":36.74703714,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.74703714,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.74703714,"lng":-4.38986035,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.4234812,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.73805402,"lng":-4.38986035,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.4234812,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.72907091,"lng":-4.38986035,"pos":21,"center":0},{"lat":36.7200878,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.7200878,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.7200878,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.7200878,"lng":-4.4234812,"pos":21,"center":1},{"lat":36.7200878,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.7200878,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.7200878,"lng":-4.38986035,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.4234812,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.71110469,"lng":-4.38986035,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.4234812,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.70212158,"lng":-4.38986035,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.45710205,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.4458951,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.43468815,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.4234812,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.41227425,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.4010673,"pos":21,"center":0},{"lat":36.69313846,"lng":-4.38986035,"pos":21,"center":0}];
+var RL_CENTER_LAT = 36.7200878;
+var RL_CENTER_LNG = -4.4234812;
+var RL_BIZ_NAME   = "Outlet de la Plata";
+var RL_GRID_SIZE  = 7;
+
+function initShareMap() {
+    var mapEl = document.getElementById('rl-share-map');
+    if (!mapEl || typeof google === 'undefined') return;
+
+    var map = new google.maps.Map(mapEl, {
+        center: {lat: RL_CENTER_LAT, lng: RL_CENTER_LNG},
+        zoom: 13,
+        mapTypeId: 'roadmap',
+        disableDefaultUI: true,
+        zoomControl: true,
+        styles: [
+            {featureType:'poi',elementType:'labels',stylers:[{visibility:'off'}]},
+            {featureType:'transit',elementType:'labels',stylers:[{visibility:'off'}]}
+        ]
+    });
+
+    // Colores por posición
+    function getColor(pos) {
+        if (pos <= 3)  return {fill:'#15803d',stroke:'#14532d'};
+        if (pos <= 7)  return {fill:'#65a30d',stroke:'#3f6212'};
+        if (pos <= 13) return {fill:'#d97706',stroke:'#92400e'};
+        if (pos <= 20) return {fill:'#dc2626',stroke:'#991b1b'};
+        return {fill:'#475569',stroke:'#1e293b'};
+    }
+
+    RL_GRID_DATA.forEach(function(pt) {
+        var col = getColor(pt.pos);
+        var label = pt.pos > 20 ? '+20' : String(pt.pos);
+        new google.maps.Marker({
+            position: {lat: pt.lat, lng: pt.lng},
+            map: map,
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: pt.center ? 14 : 11,
+                fillColor: col.fill,
+                fillOpacity: 1,
+                strokeColor: pt.center ? '#1e40af' : col.stroke,
+                strokeWeight: pt.center ? 3 : 1,
+            },
+            label: {text: label, color:'#fff', fontSize:'10px', fontWeight:'700'},
+            title: pt.center ? RL_BIZ_NAME + ' (centro)' : 'Posición ' + label,
+            zIndex: pt.center ? 100 : 10
+        });
+    });
+
+    // Pin central del negocio
+    new google.maps.Marker({
+        position: {lat: RL_CENTER_LAT, lng: RL_CENTER_LNG},
+        map: map,
+        title: RL_BIZ_NAME,
+        zIndex: 200
+    });
+}
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9pqfTmaJF3EHHcgD5QJn554gxzGhuHUQ&callback=initShareMap">
+</script>
+
+</body></html>

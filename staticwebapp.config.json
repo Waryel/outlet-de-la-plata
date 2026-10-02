@@ -1,0 +1,15 @@
+{
+	"routes": [
+		{ "route": "/malaga", "redirect": "/malaga.html", "statusCode": 301 },
+		{ "route": "/plateria-malaga/", "redirect": "/malaga.html", "statusCode": 301 },
+		{ "route": "/plateria-malaga", "redirect": "/malaga.html", "statusCode": 301 },
+		{ "route": "/conjuntos-de-plata/", "redirect": "/conjunto-de-plata/", "statusCode": 301 },
+		{ "route": "/conjuntos-de-plata", "redirect": "/conjunto-de-plata/", "statusCode": 301 },
+		{ "route": "/joyas-de-plata-religiosas/", "redirect": "/joyeria-religiosa/", "statusCode": 301 },
+		{ "route": "/joyas-de-plata-religiosas", "redirect": "/joyeria-religiosa/", "statusCode": 301 },
+		{ "route": "/piezas-unicas/", "redirect": "/piezas-plata-malaga/", "statusCode": 301 },
+		{ "route": "/piezas-unicas", "redirect": "/piezas-plata-malaga/", "statusCode": 301 },
+		{ "route": "/pulseras-de-plata/", "redirect": "/piezas-plata-malaga/", "statusCode": 301 },
+		{ "route": "/pulseras-de-plata", "redirect": "/piezas-plata-malaga/", "statusCode": 301 }
+	]
+}
