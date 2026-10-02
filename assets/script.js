@@ -1,7 +1,103 @@
 /* OUTLET DE LA PLATA — Interacciones */
 
-// Año dinámico
-document.getElementById('year').textContent = new Date().getFullYear();
+/* Layout compartido: todas las páginas usan la misma navegación y footer. */
+(function initSharedLayout() {
+  const pathname = window.location.pathname.replace(/\/+$/, '');
+  const isHome = pathname === '' || pathname === '/index.html';
+  const section = id => isHome ? `#${id}` : `/#${id}`;
+  const page = path => path;
+
+  document.querySelector('header.nav')?.remove();
+  document.querySelector('div.nav-mobile')?.remove();
+  document.querySelector('footer.footer')?.remove();
+
+  const header = document.createElement('header');
+  header.className = 'nav';
+  header.id = 'nav';
+  header.innerHTML = `
+    <a href="${section('hero')}" class="nav__brand" aria-label="OUTLET DE LA PLATA - Inicio">OUTLET DE LA PLATA</a>
+    <nav class="nav__links" aria-label="Navegación principal">
+        <a href="${page('/anillos-de-plata/')}">Anillos</a>
+        <a href="${page('/pendientes-de-plata/')}">Pendientes</a>
+        <a href="${page('/colgantes-de-plata/')}">Colgantes</a>
+      <details class="nav__more">
+        <summary>Más</summary>
+        <div class="nav__more-menu">
+          <a href="${page('/conjunto-de-plata/')}">Conjuntos de plata</a>
+          <a href="${page('/piezas-plata-malaga/')}">Piezas únicas</a>
+          <a href="${page('/joyeria-religiosa/')}">Joyas religiosas</a>
+        </div>
+      </details>
+      <a href="/malaga.html">Málaga</a>
+      <a href="${section('faq')}">FAQ</a>
+      <a href="${section('contacto')}">Contacto</a>
+    </nav>
+    <div class="nav__lang"><a href="${section('hero')}" aria-current="page">ES</a></div>
+    <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>`;
+
+  const mobile = document.createElement('div');
+  mobile.className = 'nav-mobile';
+  mobile.id = 'nav-mobile';
+  mobile.setAttribute('aria-hidden', 'true');
+  mobile.innerHTML = `
+    <div class="nav-mobile__top">
+      <span class="nav-mobile__label">Navegación</span>
+      <button class="nav-mobile__close" type="button" aria-label="Cerrar menú"><span></span><span></span></button>
+    </div>
+    <nav class="nav-mobile__inner" aria-label="Navegación móvil">
+      <a href="/anillos-de-plata/">Anillos de plata</a>
+      <a href="/pendientes-de-plata/">Pendientes de plata</a>
+      <a href="/colgantes-de-plata/">Colgantes de plata</a>
+      <details class="nav-mobile__more">
+        <summary>Más</summary>
+        <div>
+          <a href="/piezas-plata-malaga/">Pulsera de plata</a>
+          <a href="/conjunto-de-plata/">Conjunto de plata</a>
+          <a href="/piezas-plata-malaga/">Piezas exclusivas</a>
+        </div>
+      </details>
+      <a href="/malaga.html">Málaga</a>
+      <a href="${section('faq')}">Preguntas frecuentes</a>
+      <a href="${section('contacto')}">Contacto</a>
+    </nav>`;
+
+  const footer = document.createElement('footer');
+  footer.className = 'footer';
+  footer.innerHTML = `
+    <div class="footer__grid">
+      <div>
+        <p class="footer__brand">OUTLET DE LA PLATA</p>
+        <p class="footer__small">Joyería artesanal · Plata 925<br>C. San Juan 22 · 29005 Málaga<br><a href="tel:+34611041585">611 04 15 85</a></p>
+        <p class="footer__social-label">Síguenos</p>
+        <nav class="footer__socials" aria-label="Redes sociales y contacto">
+          <a href="https://www.facebook.com/people/Outlet-de-la-Plata/100048492763612/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-label="Facebook">f</a>
+          <a href="https://www.instagram.com/outletdelaplata" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-label="Instagram">◎</a>
+          <a href="https://www.tiktok.com/@outletdelaplata" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-label="TikTok">♪</a>
+          <a href="mailto:hola@outletdelaplata.es" aria-label="Email" data-label="Email">@</a>
+        </nav>
+      </div>
+      <nav aria-label="Categorías">
+        <a href="/anillos-de-plata/">Anillos de plata</a>
+        <a href="/pendientes-de-plata/">Pendientes de plata</a>
+        <a href="/colgantes-de-plata/">Colgantes de plata</a>
+        <a href="/piezas-plata-malaga/">Piezas exclusivas</a>
+      </nav>
+      <nav aria-label="Información">
+        <a href="${section('faq')}">Preguntas frecuentes</a>
+        <a href="${section('contacto')}">Contacto</a>
+        <a href="/legal/aviso-legal/">Aviso legal</a>
+        <a href="/legal/privacidad/">Privacidad</a>
+      </nav>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> OUTLET DE LA PLATA · Málaga, España</p>`;
+
+  document.body.prepend(mobile);
+  document.body.prepend(header);
+  document.body.append(footer);
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
 
 // Cursor personalizado
 const cursor = document.querySelector('.cursor');

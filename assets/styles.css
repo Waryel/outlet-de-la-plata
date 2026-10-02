@@ -11,8 +11,8 @@
   --gold:      #D4AF7A;
 
   --serif: "Bodoni Moda", "Didot", Georgia, serif;
-  --sans:  "Inter", "Neue Haas Grotesk", system-ui, sans-serif;
-  --editorial-sans: "Source Sans 3", "Inter", sans-serif;
+  --sans:  "Raleway", "Inter", "Neue Haas Grotesk", system-ui, sans-serif;
+  --editorial-sans: "Raleway", "Source Sans 3", "Inter", sans-serif;
 
   --margin: 8vw;
   --ease:   cubic-bezier(0.22, 1, 0.36, 1);
@@ -93,6 +93,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 .nav__links { display: flex; align-items: center; gap: 2rem; }
 .nav__lang { display: flex; gap: .5rem; opacity: .7; }
 .nav__toggle { display: none; }
+/* El menú móvil solo debe aparecer al abrirlo en pantallas pequeñas. */
+.nav-mobile { display: none; }
 .nav__more { position: relative; display: flex; align-items: center; }
 .nav__more summary {
   list-style: none;
