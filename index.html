@@ -21,15 +21,15 @@
 <meta property="og:title" content="Joyería artesanal y platería en Málaga">
 <meta property="og:description" content="Anillos, medallas, cadenas, colgantes y joyas de plata 925 en el centro de Málaga.">
 <meta property="og:url" content="https://outletdelaplata.es/">
-<meta property="og:image" content="https://outletdelaplata.es/images/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Joyería de plata de OUTLET DE LA PLATA en Málaga">
+<meta property="og:image" content="https://outletdelaplata.es/images/outlet-de-la-plata-malaga.png">
+<meta property="og:image:width" content="830">
+<meta property="og:image:height" content="567">
+<meta property="og:image:alt" content="Fachada de OUTLET DE LA PLATA en C. San Juan, 22, Málaga">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Joyería artesanal y platería en Málaga">
 <meta name="twitter:description" content="Joyas de plata 925 y piezas originales en el centro de Málaga.">
-<meta name="twitter:image" content="https://outletdelaplata.es/images/og-cover.jpg">
+<meta name="twitter:image" content="https://outletdelaplata.es/images/outlet-de-la-plata-malaga.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,19 +37,15 @@
 <link rel="stylesheet" href="/assets/styles.css">
 
 <!--
-  ARQUITECTURA SEO:
+  RUTAS SEO PUBLICADAS:
   /                       Inicio
   /anillos-de-plata/      Categoría
-  /medallas-de-plata/     Categoría
-  /cadenas-de-plata/      Categoría
+  /pendientes-de-plata/   Categoría
   /colgantes-de-plata/    Categoría
-  /pulseras-de-plata/     Categoría
-  /joyas-artesanales/     Categoría
-  /joyas-tematicas/       Categoría
-  /joyas-religiosas/      Categoría
-  /plateria-malaga/       Landing local
-  /guias/                 Contenido AEO
-  /productos/<slug>/      Ficha individual de producto
+  /conjunto-de-plata/     Categoría
+  /piezas-plata-malaga/   Categoría
+  /joyeria-religiosa/     Categoría
+  /malaga                 Landing local
 -->
 
 <!-- =========================================================
@@ -77,8 +73,7 @@
       "@id": "https://outletdelaplata.es/#store",
       "name": "OUTLET DE LA PLATA",
       "url": "https://outletdelaplata.es/",
-      "image": "https://outletdelaplata.es/images/og-cover.jpg",
-      "logo": "https://outletdelaplata.es/images/logo.svg",
+      "image": "https://outletdelaplata.es/images/outlet-de-la-plata-malaga.png",
       "telephone": "+34611041585",
       "priceRange": "€€",
       "currenciesAccepted": "EUR",
@@ -106,9 +101,21 @@
       "openingHoursSpecification": [
         {
           "@type":"OpeningHoursSpecification",
-          "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
           "opens":"10:30",
-          "closes":"20:30"
+          "closes":"14:00"
+        },
+        {
+          "@type":"OpeningHoursSpecification",
+          "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens":"17:30",
+          "closes":"21:00"
+        },
+        {
+          "@type":"OpeningHoursSpecification",
+          "dayOfWeek":"Saturday",
+          "opens":"10:00",
+          "closes":"14:00"
         }
       ],
       "sameAs": [
@@ -132,7 +139,6 @@
       "@id":"https://outletdelaplata.es/#organization",
       "name":"OUTLET DE LA PLATA",
       "url":"https://outletdelaplata.es/",
-      "logo":"https://outletdelaplata.es/images/logo.svg",
       "sameAs":[
         "https://www.facebook.com/people/Outlet-de-la-Plata/100048492763612/?locale=es_LA",
         "https://www.instagram.com/outletdelaplata",
@@ -178,7 +184,7 @@
       "name":"¿Dónde comprar joyas de plata en Málaga?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"OUTLET DE LA PLATA se encuentra en C. San Juan 22, Distrito Centro, 29005 Málaga. La tienda está especializada en joyería y platería artesanal."
+        "text":"OUTLET DE LA PLATA está en C. San Juan, 22, Distrito Centro, 29005 Málaga. Abre de lunes a viernes de 10:30 a 14:00 y de 17:30 a 21:00, y los sábados de 10:00 a 14:00. Los domingos está cerrado. Teléfono: 611 04 15 85."
       }
     },
     {
@@ -186,7 +192,7 @@
       "name":"¿Qué tipo de joyas de plata puedo encontrar?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"La colección incluye anillos, medallas, cadenas, colgantes, pulseras, pendientes y otras piezas artesanales de plata, según disponibilidad."
+        "text":"En OUTLET DE LA PLATA puedes encontrar anillos, medallas, cadenas, colgantes, pulseras, pendientes y otras piezas artesanales, según disponibilidad."
       }
     },
     {
@@ -194,7 +200,7 @@
       "name":"¿Qué es la plata 925?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"La plata 925 es una aleación que contiene un 92,5 % de plata. Es una de las composiciones habituales en joyería y platería."
+        "text":"La plata 925 contiene un 92,5 % de plata. Es una composición habitual en joyería y platería. Consulta la ficha de cada producto para conocer el material utilizado."
       }
     },
     {
@@ -202,7 +208,15 @@
       "name":"¿Cómo puedo saber mi talla de anillo?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"La talla puede determinarse midiendo un anillo que ya te quede bien o tomando la circunferencia del dedo. En una ficha de producto se recomienda ofrecer una guía de tallas y, cuando sea posible, asesoramiento antes de comprar."
+        "text":"Mide el diámetro interior de un anillo que ya te quede bien y consulta la equivalencia de talla. Si tienes dudas, llama a OUTLET DE LA PLATA al 611 04 15 85."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"¿Cómo se limpia la plata?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"El método de limpieza depende de la pieza y de sus piedras o acabados. Evita productos abrasivos o baños químicos si no sabes si son adecuados; consulta en tienda antes de limpiar una pieza delicada."
       }
     },
     {
@@ -210,7 +224,7 @@
       "name":"¿Hacen envíos?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Consulta las condiciones de envío, plazos y cobertura antes de realizar el pedido. Los detalles deben mantenerse actualizados en la página de envíos."
+        "text":"Los destinos, costes y plazos pueden variar. Confirma las condiciones de envío antes de comprar llamando a OUTLET DE LA PLATA al 611 04 15 85."
       }
     }
   ]
@@ -239,7 +253,7 @@
         </div>
     </details>
 
-    <a href="/malaga.html">Málaga</a>
+    <a href="/malaga">Málaga</a>
     <a href="#faq">FAQ</a>
     <a href="#contacto">Contacto</a>
     </nav>
@@ -283,10 +297,9 @@
 
 <section class="hero" id="hero">
   <div class="hero__media">
-    <!-- Sustituir por fotografía REAL propia del producto/atelier -->
     <img
       src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=2400&q=80"
-      alt="Anillo de plata 925 de OUTLET DE LA PLATA en Málaga"
+      alt=""
       fetchpriority="high"
       decoding="async"
       width="2400"
@@ -494,17 +507,16 @@
   <div class="atelier__grid">
     <div class="atelier__media">
       <img src="images/outlet-de-la-plata-malaga.png?auto=format&fit=crop&w=1600&q=85"
-           alt="Atelier de OUTLET DE LA PLATA en el centro de Málaga"
+           alt="Fachada de OUTLET DE LA PLATA en C. San Juan, 22, Málaga"
            loading="lazy" decoding="async" width="1600" height="1067">
     </div>
     <div class="atelier__text">
-      <p class="kicker">03 — Atelier</p>
+      <p class="kicker">03 — Tienda</p>
       <h2>Platería artesanal en el centro de Málaga.</h2>
       <p>
-        El atelier es parte esencial de la identidad de la marca. Aquí se diseña,
-        se trabaja y se termina cada pieza. La web debe mostrar fotografías propias
-        del proceso, del espacio y de las manos que realizan el trabajo para reforzar
-        confianza, diferenciación y evidencia de primera mano.
+        En OUTLET DE LA PLATA encontrarás una selección de joyas de plata 925 y
+        piezas de platería artesanal en el centro de Málaga. Visítanos en C. San Juan,
+        22 para descubrir la colección y recibir ayuda para elegir una pieza.
       </p>
       <ol class="atelier__list">
         <li>Selección y preparación del material.</li>
@@ -528,7 +540,7 @@
   <div class="reviews__summary" aria-label="Valoración de Google">
     <strong>5,0</strong>
     <span class="reviews__stars" aria-label="5 estrellas de 5">★★★★★</span>
-    <span>511 reseñas en Google</span>
+    <span>514 reseñas en Google</span>
   </div>
 
   <div class="press__grid reviews__grid">
@@ -576,18 +588,17 @@
     <details>
       <summary>¿Dónde comprar joyas de plata en Málaga?</summary>
       <p>
-        OUTLET DE LA PLATA se encuentra en C. San Juan 22, Distrito Centro,
-        29005 Málaga. Consulta la <a href="#contacto">información de la tienda</a>
-        para conocer ubicación, horario y servicios.
+        OUTLET DE LA PLATA está en C. San Juan, 22, Distrito Centro, 29005 Málaga.
+        Abre de lunes a viernes de 10:30 a 14:00 y de 17:30 a 21:00, y los sábados
+        de 10:00 a 14:00. Los domingos está cerrado. Teléfono:
+        <a href="tel:+34611041585">611 04 15 85</a>.
       </p>
     </details>
 
     <details>
       <summary>¿Qué tipo de joyas de plata puedo encontrar?</summary>
       <p>
-        La oferta puede incluir <a href="#coleccion-anillos">anillos</a>,
-        <a href="#piezas">medallas</a>,
-        cadenas, <a href="#coleccion-colgantes">colgantes</a>,
+        En OUTLET DE LA PLATA puedes encontrar anillos, medallas, cadenas, colgantes,
         pulseras, pendientes y otras piezas artesanales, según disponibilidad.
       </p>
     </details>
@@ -596,34 +607,35 @@
       <summary>¿Qué es la plata 925?</summary>
       <p>
         La plata 925 contiene un 92,5 % de plata. Es una composición habitual
-        en joyería y platería. Consulta siempre la ficha de cada producto para
-        conocer exactamente el material utilizado.
+        en joyería y platería. Consulta la ficha de cada producto para conocer
+        el material utilizado.
       </p>
     </details>
 
     <details>
       <summary>¿Cómo puedo saber mi talla de anillo?</summary>
       <p>
-        Puedes medir el diámetro interior de un anillo que ya te quede bien o
-        la circunferencia del dedo. Para cada producto se recomienda ofrecer
-        una guía de tallas y asistencia antes de comprar.
+        Mide el diámetro interior de un anillo que ya te quede bien y consulta
+        la equivalencia de talla. Si tienes dudas, llama a OUTLET DE LA PLATA al
+        <a href="tel:+34611041585">611 04 15 85</a>.
       </p>
     </details>
 
     <details>
       <summary>¿Cómo se limpia la plata?</summary>
       <p>
-        El cuidado depende del acabado de la pieza. Evita productos abrasivos
-        sin comprobar antes las indicaciones del fabricante. Consulta la
-        <a href="/guias/como-limpiar-plata/">guía de limpieza y cuidado de la plata</a>.
+        El método de limpieza depende de la pieza y de sus piedras o acabados.
+        Evita productos abrasivos o baños químicos si no sabes si son adecuados;
+        consulta en tienda antes de limpiar una pieza delicada.
       </p>
     </details>
 
     <details>
       <summary>¿Hacen envíos?</summary>
       <p>
-        Consulta la <a href="/envios/">página de envíos</a> para conocer destinos,
-        plazos, costes, seguimiento y condiciones vigentes.
+        Los destinos, costes y plazos pueden variar. Confirma las condiciones de
+        envío antes de comprar llamando a OUTLET DE LA PLATA al
+        <a href="tel:+34611041585">611 04 15 85</a>.
       </p>
     </details>
   </div>
@@ -644,7 +656,8 @@
 
       <p class="contact__hours">
         <strong>Horario:</strong><br>
-        Lunes a sábado · 10:30–20:30<br>
+        Lunes a viernes · 10:30–14:00 y 17:30–21:00<br>
+        Sábado · 10:00–14:00<br>
         Domingo · cerrado
       </p>
 
@@ -753,8 +766,8 @@
     </nav>
 
     <nav aria-label="Información">
-      <a href="/guias/">Guías sobre joyería</a>
-      <a href="/envios/">Envíos</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#faq">Consulta sobre envíos</a>
       <a href="/legal/aviso-legal/">Aviso legal</a>
       <a href="/legal/privacidad/">Privacidad</a>
       <a href="/legal/cookies/">Cookies</a>
